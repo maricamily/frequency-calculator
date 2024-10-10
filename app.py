@@ -19,11 +19,14 @@ class Application:
         self.choice120.pack (pady=10)
 
         self.fourthContainer = Frame(master)
+        self.labelAbsences = Label(self.fourthContainer, text="pai, devo faltar? (digite o n de faltas)")
+        self.labelAbsences["font"] = self.standardFont
         self.absences = Entry(self.fourthContainer, width=30)
         self.absences["font"] = self.standardFont # here is the creation of the input so the user can tell how much absences he had, but it only appears if you click the button
 
     def inputAbsences(self):
         self.fourthContainer.pack(pady=10)
+        self.labelAbsences.pack ()
         self.absences.pack () #makes the input box visible
 
     def button80(self):
@@ -36,7 +39,7 @@ class Application:
         if self.msg["text"] == "Contador de faltas":
             self.inputAbsences ()
         else:
-            self.msg["text"] = "botao 120" #here is the logic for course load of 80
+            self.msg["text"] = "botao 120" #here is the logic for course load of 120
 
 root = Tk()
 Application(root)
